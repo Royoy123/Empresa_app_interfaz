@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_fondo">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- Logo de la empresa -->
+            <ImageView
+                android:id="@+id/image_logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="32dp"
+                android:src="@drawable/logo" />
+
+            <!-- Contorno amarillo -->
+            <RelativeLayout
+                android:id="@+id/relativeLayout_summary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/image_logo"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="32dp"
+                android:background="@drawable/button_background"
+                tools:visibility="visible">
+
+                <!-- Descripción de la cita de psicología -->
+                <TextView
+                    android:id="@+id/textView_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:gravity="center"
+                    android:text="Reserva de cita de psicología"
+                    android:textColor="@color/color_texto"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <!-- Detalles de la reserva -->
+                <!-- Hora -->
+                <TextView
+                    android:id="@+id/textView_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/textView_description"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="Hora: "
+                    android:textColor="@color/color_texto"
+                    android:textSize="16sp" />
+
+                <!-- Fecha -->
+                <TextView
+                    android:id="@+id/textView_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/textView_time"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="Fecha: "
+                    android:textColor="@color/color_texto"
+                    android:textSize="16sp" />
+
+                <!-- Centro -->
+                <TextView
+                    android:id="@+id/textView_center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/textView_date"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="Centro: "
+                    android:textColor="@color/color_texto"
+                    android:textSize="16sp" />
+
+                <!-- Profesional -->
+                <TextView
+                    android:id="@+id/textView_professional"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/textView_center"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="Profesional: "
+                    android:textColor="@color/color_texto"
+                    android:textSize="16sp" />
+
+                <!-- Precio -->
+                <TextView
+                    android:id="@+id/textView_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/textView_professional"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="Precio: "
+                    android:textColor="@color/color_texto"
+                    android:textSize="16sp" />
+
+            </RelativeLayout>
+
+            <!-- Detalles de la tarjeta de crédito -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout_cardholderName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/relativeLayout_summary"
+                android:layout_marginTop="32dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:hint="Nombre del titular"
+                android:textColorHint="@color/color_texto_hint">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editText_cardholderName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button_background"
+                    android:textColor="@color/color_texto" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout_cardNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textInputLayout_cardholderName"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:hint="Número de la tarjeta"
+                android:textColorHint="@color/color_texto_hint">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editText_cardNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button_background"
+                    android:textColor="@color/color_texto" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout_expiryDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textInputLayout_cardNumber"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:hint="Fecha de vencimiento"
+                android:textColorHint="@color/color_texto_hint">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editText_expiryDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button_background"
+                    android:textColor="@color/color_texto" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout_securityCode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textInputLayout_expiryDate"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:hint="Código de seguridad"
+                android:textColorHint="@color/color_texto_hint">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editText_securityCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button_background"
+                    android:textColor="@color/color_texto" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Botones de cancelar y aceptar -->
+            <Button
+                android:id="@+id/button_cancel"
+                style="@style/ButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textInputLayout_securityCode"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/button_background"
+                android:foreground="?attr/selectableItemBackground"
+                android:onClick="onCancelClicked"
+                android:outlineAmbientShadowColor="@android:color/transparent"
+                android:outlineSpotShadowColor="@android:color/transparent"
+                android:paddingStart="20dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="20dp"
+                android:paddingBottom="10dp"
+                android:stateListAnimator="@null"
+                android:text="Cancelar" />
+
+            <Button
+                android:id="@+id/button_accept"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Aceptar"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@id/textInputLayout_securityCode"
+                android:layout_marginEnd="32dp"
+                android:layout_marginTop="32dp"
+                android:onClick="onAcceptClicked"
+                style="@style/ButtonStyle"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:stateListAnimator="@null"
+                android:outlineAmbientShadowColor="@android:color/transparent"
+                android:outlineSpotShadowColor="@android:color/transparent"
+                android:foreground="?attr/selectableItemBackground"
+                tools:ignore="DuplicateIds" />
+
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_fondo">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- Logo de la empresa -->
+            <ImageView
+                android:id="@+id/image_logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="32dp"
+                android:src="@drawable/logo" />
+
+            <!-- Selector de fecha -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/image_logo"
+                android:layout_marginTop="32dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:hint="Fecha"
+                android:textColorHint="@color/color_texto_hint">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editText_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button_background"
+                    android:focusable="false"
+                    android:onClick="showDatePickerDialog"
+                    android:textColor="@color/color_texto" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Selector de hora -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textInputLayout_date"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:hint="Hora"
+                android:textColorHint="@color/color_texto_hint">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editText_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button_background"
+                    android:focusable="false"
+                    android:onClick="showTimePickerDialog"
+                    android:textColor="@color/color_texto" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Selector de profesional -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout_professional"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textInputLayout_time"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:textColorHint="@color/color_texto_hint"
+                android:hint="Profesional"
+                android:minHeight="48dp">
+
+                <AutoCompleteTextView
+                    android:id="@+id/autoCompleteTextView_professional"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button_background"
+                    android:focusable="false"
+                    android:inputType="none"
+                    android:minHeight="48dp"
+                    android:textColor="@color/color_texto" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Selector de ubicación -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textInputLayout_professional"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:hint="Ubicación"
+                android:textColorHint="@color/color_texto_hint">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editText_location"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button_background"
+                    android:textColor="@color/color_texto" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/button_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cancelar"
+                android:layout_alignParentStart="true"
+                android:layout_below="@id/textInputLayout_location"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                android:onClick="onCancelClicked"
+                style="@style/ButtonStyle"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:stateListAnimator="@null"
+                android:outlineAmbientShadowColor="@android:color/transparent"
+                android:outlineSpotShadowColor="@android:color/transparent"
+                android:foreground="?attr/selectableItemBackground" />
+
+            <Button
+                android:id="@+id/button_accept"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Aceptar"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@id/textInputLayout_location"
+                android:layout_marginEnd="32dp"
+                android:layout_marginTop="32dp"
+                android:onClick="onAcceptClicked"
+                style="@style/ButtonStyle"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:stateListAnimator="@null"
+                android:outlineAmbientShadowColor="@android:color/transparent"
+                android:outlineSpotShadowColor="@android:color/transparent"
+                android:foreground="?attr/selectableItemBackground" />
+
+
+
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

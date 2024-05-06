@@ -1,0 +1,6 @@
+<resources>
+    <color name="color_fondo">#07689F</color>
+    <color name="color_texto">#FACF39</color>
+    <color name="color_texto_hint">#FACF39</color>
+    <color name="color_control_fondo">#07689F</color>
+</resources>
